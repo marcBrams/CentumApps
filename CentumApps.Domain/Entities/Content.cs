@@ -11,6 +11,8 @@ namespace CentumApps.Domain.Entities
         public int ContentId {  get; set; }
         public string ContentTitle { get; set; }
         public string ContentCategory { get; set; }
+        //public string? ContentDescription { get; set; }
+        //public IFormFile? Image { get; set; }
         public string? ImageUrl { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
