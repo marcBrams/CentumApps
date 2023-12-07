@@ -26,6 +26,7 @@ namespace CentumApps.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                obj.IsActive = true;
                 _db.Contents.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index", "Content");

@@ -30,15 +30,16 @@
                     <label asp-for="ContentCategory" class="ms-2"></label>
                     <span asp-validation-for="ContentCategory" class="text-danger"></span>
                 </div>
+                    <div class="form-floating py-2 col-12">
+                        <input asp-for="ContentDescription" class="form-control border" />
+                        <label asp-for="ContentDescription" class="ms-2"></label>
+                        <span asp-validation-for="ContentDescription" class="text-danger"></span>
+                    </div>
                 <div class="form-floating py-2 col-12">
                     <input asp-for="ImageUrl" class="form-control border" />
                     <label asp-for="ImageUrl" class="ms-2"></label>
                     <span asp-validation-for="ImageUrl" class="text-danger"></span>
                 </div>
-                   @*  <div class="form-floating py-2 col-12">
-                        <textarea asp-for="ContentDescription" class="form-control border" id="exampleFormControlTextarea1" rows="5"></textarea>
-                        <label asp-for="ContentDescription" class="ms-2"></label>
-                    </div> *@
                 <div class="row pt-2">
                     <div class="col-6 col-md-3">
                         <button type="submit" class="btn btn-success w-100 btn-sm">

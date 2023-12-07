@@ -13,50 +13,50 @@
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Update Content</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Delete Content</h6>
 
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <form method="post" class="row">
                     <input asp-for="ContentId" hidden />
-                        @*  <div asp-validation-summary="All"></div> *@
-                        <div class="form-floating py-2 col-12">
-                        <input asp-for="ContentTitle" class="form-control border" />
+                    @*  <div asp-validation-summary="All"></div> *@
+                    <div class="form-floating py-2 col-12">
+                        <input asp-for="ContentTitle" disabled class="form-control border" />
                         <label asp-for="ContentTitle" class="ms-2"></label>
                         <span asp-validation-for="ContentTitle" class="text-danger"></span>
                     </div>
                     <div class="form-floating py-2 col-12">
-                        <input asp-for="ContentDescription" class="form-control border" />
+                        <input asp-for="ContentDescription" disabled class="form-control border" />
                         <label asp-for="ContentDescription" class="ms-2"></label>
                         <span asp-validation-for="ContentDescription" class="text-danger"></span>
                     </div>
                     <div class="form-floating py-2 col-12">
-                        <input asp-for="ContentCategory" class="form-control border" />
+                        <input asp-for="ContentCategory" disabled class="form-control border" />
                         <label asp-for="ContentCategory" class="ms-2"></label>
                         <span asp-validation-for="ContentCategory" class="text-danger"></span>
                     </div>
                     <div class="form-floating py-2 col-12">
-                        <input asp-for="ImageUrl" class="form-control border" />
+                        <input asp-for="ImageUrl" disabled class="form-control border" />
                         <label asp-for="ImageUrl" class="ms-2"></label>
                         <span asp-validation-for="ImageUrl" class="text-danger"></span>
                     </div>
                     <div class="row pl-5">
                         <div class="form-check form-switch py-2 col-12">
-                            <input asp-for="IsActive" class="form-check-input" type="checkbox" role="switch" />
+                            <input asp-for="IsActive" class="form-check-input" type="checkbox" role="switch" disabled/>
                             <label asp-for="IsActive" class="ms-2"></label>
                             <span asp-validation-for="IsActive" class="text-danger"></span>
                         </div>
-                    </div>  
+                    </div>
                     <div class="row pt-2">
                         <div class="col-6 col-md-3">
                             <button type="submit" class="btn btn-success w-100 btn-sm">
-                            <i class="bi bi-check-circle"></i> Update
+                                <i class="bi bi-check-circle"></i> Delete
                             </button>
                         </div>
                         <div class="col-6 col-md-3">
                             <a asp-controller="Content" asp-action="Index" class="btn btn-secondary w-100 btn-sm">
-                               <i class="bi bi-x-circle"></i> Cancel
+                                <i class="bi bi-x-circle"></i> Cancel
                             </a>
                         </div>
                     </div>
