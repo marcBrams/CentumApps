@@ -1,4 +1,5 @@
-﻿using CentumApps.Domain.Entities;
+﻿using CentumApps.Application.Common.Interfaces;
+using CentumApps.Domain.Entities;
 using CentumApps.Infastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,14 +7,15 @@ namespace CentumApps.Web.Controllers
 {
     public class ContentController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public ContentController(ApplicationDbContext db)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public ContentController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
-            _db = db;
+            _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
-            var contents = _db.Contents.ToList();
+            var contents = _unitOfWork.Content.GetAll();
             return View(contents);
         }
         public IActionResult Create()
@@ -27,8 +29,8 @@ namespace CentumApps.Web.Controllers
             if (ModelState.IsValid)
             {
                 obj.IsActive = true;
-                _db.Contents.Add(obj);
-                _db.SaveChanges();
+                _unitOfWork.Content.Add(obj);
+                _unitOfWork.Content.Save();
                 return RedirectToAction("Index", "Content");
             }
             return View();
@@ -36,7 +38,7 @@ namespace CentumApps.Web.Controllers
 
         public IActionResult Update(int contentId)
         {
-            Content? obj = _db.Contents.FirstOrDefault(u => u.ContentId == contentId);
+            Content? obj = _unitOfWork.Content.Get(u => u.ContentId == contentId);
             /* get data by find primary key */
             /*Villa? objByFind = _db.Villas.Find(villaId);*/
 
@@ -55,8 +57,8 @@ namespace CentumApps.Web.Controllers
             /* update data to db based on id*/
             if (ModelState.IsValid)
             {
-                _db.Contents.Update(obj);
-                _db.SaveChanges();
+                _unitOfWork.Content.Update(obj);
+                _unitOfWork.Content.Save();
                 return RedirectToAction("Index");
             }
             return View();
@@ -65,7 +67,7 @@ namespace CentumApps.Web.Controllers
         /* delete data */
         public IActionResult Delete(int contentId)
         {
-            Content? obj = _db.Contents.FirstOrDefault(u => u.ContentId == contentId);
+            Content? obj = _unitOfWork.Content.Get(u => u.ContentId == contentId);
             /* get data by find primary key */
             /*Villa? objByFind = _db.Villas.Find(villaId);*/
 
@@ -80,12 +82,12 @@ namespace CentumApps.Web.Controllers
         [HttpPost]
         public IActionResult Delete(Content obj)
         {
-            Content? objFromDb = _db.Contents.FirstOrDefault(u => u.ContentId == obj.ContentId);
+            Content? objFromDb = _unitOfWork.Content.Get(u => u.ContentId == obj.ContentId);
             /* update data to db based on id*/
             if (objFromDb is not null)
             {
-                _db.Contents.Remove(objFromDb);
-                _db.SaveChanges();
+                _unitOfWork.Content.Remove(objFromDb);
+                _unitOfWork.Content.Save();
                 return RedirectToAction("Index");
             }
             return View();

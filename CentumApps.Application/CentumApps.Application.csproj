@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CentumApps.Domain\CentumApps.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CentumApps.Application\CentumApps.Application.csproj" />
     <ProjectReference Include="..\CentumApps.Infastructure\CentumApps.Infastructure.csproj" />
   </ItemGroup>
 
