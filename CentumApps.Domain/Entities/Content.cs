@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace CentumApps.Domain.Entities
 {
@@ -16,7 +18,8 @@ namespace CentumApps.Domain.Entities
         public string ContentCategory { get; set; }
         [Display(Name = "Deskripsi")]
         public string? ContentDescription { get; set; }
-        //public IFormFile? Image { get; set; }
+        [NotMapped]
+        public IFormFile? Image { get; set; }
         public string? ImageUrl { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }

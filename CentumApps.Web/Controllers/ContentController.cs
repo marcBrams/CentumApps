@@ -12,6 +12,7 @@ namespace CentumApps.Web.Controllers
         public ContentController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -28,6 +29,24 @@ namespace CentumApps.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                // upload image logic
+                if (obj.Image != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(obj.Image.FileName);
+                    string imagePath = Path.Combine(_webHostEnvironment.WebRootPath, @"images\VisualManagementContent");
+
+                    using (var fileStream = new FileStream(Path.Combine(imagePath, fileName), FileMode.Create))
+                    {
+                        obj.Image.CopyTo(fileStream);
+                    }
+
+                    obj.ImageUrl = @"\images\VisualManagementContent\" + fileName;
+                }
+                else
+                {
+                    obj.ImageUrl = "https://placehold.co/600x400";
+                }
+
                 obj.IsActive = true;
                 _unitOfWork.Content.Add(obj);
                 _unitOfWork.Content.Save();
