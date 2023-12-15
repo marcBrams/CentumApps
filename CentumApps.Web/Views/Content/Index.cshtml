@@ -23,11 +23,11 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Judul Konten</th>
-                        <th>Kategori</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Judul Konten</th>
+                        <th class="text-center">Kategori</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,14 +37,15 @@
                             <td>@obj.ContentId</td>
                             <td>@obj.ContentTitle</td>
                             <td>@obj.ContentCategory</td>
-                            <td>@if (@obj.IsActive)
+                            <td class="text-center">
+                                @if (@obj.IsActive)
                                 {
                                     <i class="bi bi-check-circle-fill text-success m-3"></i>
                                 } else {
-                                    <i class="bi bi-check-circle-fill text-danger m-3"></i>
+                                    <i class="bi bi-x-circle-fill text-danger m-3"></i>
                                 }                               
                             </td>
-                            <td>
+                            <td class="text-center">
                                     <a asp-controller="Content" asp-action="Update" asp-route-contentId="@obj.ContentId"
                                        class="btn btn-success btn-sm">
                                         <i class="bi bi-pencil-fill"></i> Update

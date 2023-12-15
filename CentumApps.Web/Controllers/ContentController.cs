@@ -47,6 +47,7 @@ namespace CentumApps.Web.Controllers
                     obj.ImageUrl = "https://placehold.co/600x400";
                 }
 
+                obj.ContentTitle = $"{obj.ContentTitle} - {DateTime.Now.ToString("dd/MM/yyyy")}";
                 obj.IsActive = true;
                 _unitOfWork.Content.Add(obj);
                 _unitOfWork.Content.Save();
@@ -76,6 +77,31 @@ namespace CentumApps.Web.Controllers
             /* update data to db based on id*/
             if (ModelState.IsValid)
             {
+
+                // upload image logic
+                if (obj.Image != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(obj.Image.FileName);
+                    string imagePath = Path.Combine(_webHostEnvironment.WebRootPath, @"images\VisualManagementContent");
+
+                    if (!string.IsNullOrEmpty(obj.ImageUrl))
+                    {
+                        var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
+
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStream = new FileStream(Path.Combine(imagePath, fileName), FileMode.Create))
+                    {
+                        obj.Image.CopyTo(fileStream);
+                    }
+
+                    obj.ImageUrl = @"\images\VisualManagementContent\" + fileName;
+                }
+
                 _unitOfWork.Content.Update(obj);
                 _unitOfWork.Content.Save();
                 return RedirectToAction("Index");
@@ -105,6 +131,17 @@ namespace CentumApps.Web.Controllers
             /* update data to db based on id*/
             if (objFromDb is not null)
             {
+
+                if (!string.IsNullOrEmpty(objFromDb.ImageUrl))
+                {
+                    var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDb.ImageUrl.TrimStart('\\'));
+
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
                 _unitOfWork.Content.Remove(objFromDb);
                 _unitOfWork.Content.Save();
                 return RedirectToAction("Index");

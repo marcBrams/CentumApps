@@ -9,7 +9,7 @@
 <div class="row">
 
     <!-- Area Chart -->
-    <div class="col-xl-8 col-lg-7">
+    <div class="col-xl-6 col-lg-7">
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -37,7 +37,7 @@
                         <span asp-validation-for="ContentCategory" class="text-danger"></span>
                     </div>
                     <div class="form-floating py-2 col-12">
-                        <input asp-for="ImageUrl" disabled class="form-control border" />
+                        <input asp-for="ImageUrl" hidden disabled class="form-control border" />
                         <label asp-for="ImageUrl" class="ms-2"></label>
                         <span asp-validation-for="ImageUrl" class="text-danger"></span>
                     </div>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="row pt-2">
                         <div class="col-6 col-md-3">
-                            <button type="submit" class="btn btn-success w-100 btn-sm">
+                            <button type="submit" class="btn btn-danger w-100 btn-sm">
                                 <i class="bi bi-check-circle"></i> Delete
                             </button>
                         </div>
@@ -61,6 +61,18 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-5">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Content Image</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <img src="@Model.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
             </div>
         </div>
     </div>
