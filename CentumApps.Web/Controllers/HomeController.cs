@@ -1,4 +1,6 @@
+using CentumApps.Application.Common.Interfaces;
 using CentumApps.Web.Models;
+using CentumApps.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +8,19 @@ namespace CentumApps.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IUnitOfWork _unitOfWork;
+        public HomeController(IUnitOfWork unitOfWork)
         {
-            _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            return View();
+            HomeVM homeVM = new()
+            {
+                ContentList = _unitOfWork.Content.GetAll(u => u.IsActive == true)
+            };
+            return View(homeVM);
         }
 
         public IActionResult Privacy()
