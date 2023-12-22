@@ -9,7 +9,7 @@
             @foreach (var content in Model.ContentList)
             {
                 <div class="carousel-item @(content == Model.ContentList.First() ? "active" : "")">
-                    <img src="@content.ImageUrl" class="d-block w-100 vh-100" alt="..." style="object-fit: cover;">
+                    <img src="@content.ImageUrl" class="d-block w-100 vh-100" alt="...">
                 </div>
             }
         </div>
