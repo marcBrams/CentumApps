@@ -4,11 +4,11 @@
     Layout = "_LayoutHomepage";
 }
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-interval="10000">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" role="listbox">
             @foreach (var content in Model.ContentList)
             {
-                <div class="carousel-item @(content == Model.ContentList.First() ? "active" : "")">
+            <div class="carousel-item @(content == Model.ContentList.First() ? "active" : "")" data-interval="60000">
                     <img src="@content.ImageUrl" class="d-block w-100 vh-100" alt="...">
                 </div>
             }
