@@ -12,6 +12,7 @@ namespace CentumApps.Domain.Entities
 {
     public class GP1
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int GP1_ID { get; set; } 
         public string ShiftSupervisor { get; set; }
         public string ReportDate { get; set; }
@@ -32,9 +33,9 @@ namespace CentumApps.Domain.Entities
         public int HPBOC { get; set; }
         public int Oxymeter { get; set; }
         public int Strobo { get; set; }
-        public Date CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
         public string CreatedBy { get; set; }
-        public Date UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public string UpdatedBy { get; set; }
         public bool IsSubmitted { get; set; }
 

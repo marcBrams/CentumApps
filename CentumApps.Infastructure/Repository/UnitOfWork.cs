@@ -14,12 +14,14 @@ namespace CentumApps.Infastructure.Repository
 
         // add more interface
         public IContentRepository Content { get; private set; }
+        public IShiftReportRepository ShiftReport { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             // add more interface
             Content = new ContentRepository(db);
+            ShiftReport = new ShiftReportRepository(db);
         }
     }
 }

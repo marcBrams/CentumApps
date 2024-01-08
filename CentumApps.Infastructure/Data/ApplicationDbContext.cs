@@ -14,6 +14,7 @@ namespace CentumApps.Infastructure.Data
         {
         }
         public DbSet<Content> Contents { get; set; }
+        public DbSet<ShiftReports> ShiftReports { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +27,18 @@ namespace CentumApps.Infastructure.Data
                 ImageUrl = "https://placehold.co/600x400",
                 CreatedBy = "Admin",
                 IsActive = true,
+            });
+
+            modelBuilder.Entity<ShiftReports>().HasData(new ShiftReports
+            {
+                ReportId = 1,
+                ReportDate = "Report - 05/12/2023",
+                Status = "Draft",
+                Team = "A",
+                Area = "CDU",
+                CreatedBy = "Admin",
+                IsSubmitted = false,
+
             });
         }
     }

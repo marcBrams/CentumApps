@@ -1,0 +1,130 @@
+﻿@model IEnumerable<CentumApps.Domain.Entities.ShiftReports>
+
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Laporan Shift Supervisor</h1>
+<p class="mb-4">
+    Laporan Shift Supervisor All Area - HSC Production
+</p>
+
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-4 col-md-6 mb-4">
+        <a asp-controller="Content" asp-action="Create" class="card-link">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-l font-weight-bold text-primary text-uppercase mb-1">
+                                CDU
+                            </div>
+                            <div class="mb-0 font-weight-bold text-gray-800">Laporan Shift Supervisor CDU</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="bi bi-bookmarks-fill text-gray-500 h2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-4 col-md-6 mb-4">
+        <a asp-controller="Content" asp-action="Create" class="card-link">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-l font-weight-bold text-success text-uppercase mb-1">
+                                NRU & PL-1
+                            </div>
+                            <div class="mb-0 font-weight-bold text-gray-800">Laporan Shift Supervisor NRU & PL-1</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="bi bi-bookmarks-fill text-gray-500 h2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-4 col-md-6 mb-4">
+        <a asp-controller="Content" asp-action="Create" class="card-link">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-l font-weight-bold text-info text-uppercase mb-1">
+                                NHDT & PL-2
+                            </div>
+                            <div class="mb-0 font-weight-bold text-gray-800">Laporan Shift Supervisor NHDT & PL-2</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="bi bi-bookmarks-fill text-gray-500 h2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    
+</div>
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        @* <i class="bi bi-info-circle text-primary h6"> 10 Laporan Terakhir</i>  *@
+        @* <a asp-controller="Content" asp-action="Create" class="btn btn-primary btn-icon-split btn-sm">
+            <span class="icon text-white-50">
+                <i class="bi bi-plus-circle"></i>
+            </span>
+            <span class="text">Buat Laporan Baru</span>
+        </a> *@
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Tanggal Laporan</th>
+                        <th class="text-center">Area</th>
+                        <th class="text-center">Team</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.ReportId</td>
+                            <td>@obj.ReportDate</td>
+                            <td>@obj.Area</td>
+                            <td>@obj.Team</td>
+                            <td>@obj.Status</td>
+                            <td class="text-center">
+                                    <a asp-controller="Content" asp-action="Update" asp-route-reportId="@obj.ReportId"
+                                       class="btn btn-success btn-sm">
+                                        <i class="bi bi-pencil-fill"></i> Update
+                                    </a>
+                                    <a asp-controller="Content" asp-action="Delete" asp-route-reportId="@obj.ReportId"
+                                       class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash-fill"></i> Delete
+                                    </a> 
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

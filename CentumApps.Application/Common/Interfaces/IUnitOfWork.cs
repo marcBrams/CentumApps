@@ -9,5 +9,6 @@ namespace CentumApps.Application.Common.Interfaces
     public interface IUnitOfWork
     {
         IContentRepository Content { get; }
+        IShiftReportRepository ShiftReport { get; }
     }
 }
