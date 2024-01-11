@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # Ignore uploaded image folder
 wwwroot/images/VisualManagementContent/
+/CentumApps.Infastructure/Migrations
