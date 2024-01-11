@@ -15,6 +15,7 @@ namespace CentumApps.Infastructure.Repository
         // add more interface
         public IContentRepository Content { get; private set; }
         public IShiftReportRepository ShiftReport { get; private set; }
+        public ICDURepository CDU { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -22,6 +23,7 @@ namespace CentumApps.Infastructure.Repository
             // add more interface
             Content = new ContentRepository(db);
             ShiftReport = new ShiftReportRepository(db);
+            CDU = new CDURepository(db);
         }
     }
 }

@@ -10,5 +10,6 @@ namespace CentumApps.Application.Common.Interfaces
     {
         IContentRepository Content { get; }
         IShiftReportRepository ShiftReport { get; }
+        ICDURepository CDU { get; }
     }
 }

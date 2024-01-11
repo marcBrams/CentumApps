@@ -12,9 +12,10 @@ namespace CentumApps.Domain.Entities
 {
     public class CDU_100
     {
+        [Key]
         public int CDU_100_ID { get; set; } 
         public string ShiftSupervisor { get; set; }
-        public Date ReportDate { get; set; }
+        public DateTime? ReportDate { get; set; }
         public string Shift {  get; set; }
         public string ShiftTime {  get; set; }
         public int DesignKapasitas { get; set; }
@@ -63,9 +64,9 @@ namespace CentumApps.Domain.Entities
         public int Notes_Lembur { get; set; }
         public int Notes_HPBOC { get; set; }
         public int Notes_Oxymeter {  get; set; }
-        public Date CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
         public string CreatedBy { get; set; }
-        public Date UpdatedAt {  get; set; }
+        public DateTime? UpdatedAt {  get; set; }
         public string UpdatedBy { get; set; }
         public bool IsSubmitted { get; set; }
 

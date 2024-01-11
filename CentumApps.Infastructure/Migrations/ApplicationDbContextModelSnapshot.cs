@@ -22,6 +22,250 @@ namespace CentumApps.Infastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CentumApps.Domain.Entities.CDU_100", b =>
+                {
+                    b.Property<int>("CDU_100_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CDU_100_ID"));
+
+                    b.Property<int>("Analisa_ColourHGO")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Analisa_EPSRN")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Analisa_FPKero")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Analisa_PHWaterboot")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Analisa_RecHGO")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cot100_H1H2")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Crude")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DesignKapasitas")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FlowStream")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_100H_1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_100H_2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_100P6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_Gas")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_Oil")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HGO")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsSubmitted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Kerosene")
+                        .HasColumnType("int");
+
+                    b.Property<string>("KondisiKritis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KondisiOperasi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LGO")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_AirGalon")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_Calculator")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_GasTester")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_HPBOC")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_HT_Charger")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_Lembur")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_Manpower")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_MobilShift")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_Oxymeter")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_Sepeda")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Notes_Stopwatch")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Pemeliharaan")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PressFZone")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PressPass")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Press_100D1")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ReportDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ResidueToHVU")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ResidueToTank")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ResidueTotal")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SRN")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Shift")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShiftSupervisor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShiftTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Target")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TempBot")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TempOutlet")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Util_FlowSW")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Util_FlowStream")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Util_PressCW")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Util_PressInstrumenAir")
+                        .HasColumnType("int");
+
+                    b.HasKey("CDU_100_ID");
+
+                    b.ToTable("CDU");
+
+                    b.HasData(
+                        new
+                        {
+                            CDU_100_ID = 1,
+                            Analisa_ColourHGO = 1,
+                            Analisa_EPSRN = 1,
+                            Analisa_FPKero = 1,
+                            Analisa_PHWaterboot = 1,
+                            Analisa_RecHGO = 1,
+                            Cot100_H1H2 = 1,
+                            CreatedBy = "text",
+                            Crude = 1,
+                            DesignKapasitas = 1,
+                            FlowStream = 1,
+                            Fuel_100H_1 = 1,
+                            Fuel_100H_2 = 1,
+                            Fuel_100P6 = 1,
+                            Fuel_Gas = 1,
+                            Fuel_H1 = 1,
+                            Fuel_Oil = 1,
+                            HGO = 1,
+                            IsSubmitted = true,
+                            Kerosene = 1,
+                            KondisiKritis = "text",
+                            KondisiOperasi = "text",
+                            LGO = 1,
+                            Notes_AirGalon = 1,
+                            Notes_Calculator = 1,
+                            Notes_GasTester = 1,
+                            Notes_HPBOC = 1,
+                            Notes_HT_Charger = 1,
+                            Notes_Lembur = 1,
+                            Notes_Manpower = 1,
+                            Notes_MobilShift = 1,
+                            Notes_Oxymeter = 1,
+                            Notes_Sepeda = 1,
+                            Notes_Stopwatch = 1,
+                            Pemeliharaan = "text",
+                            PressFZone = 1,
+                            PressPass = 1,
+                            Press_100D1 = 1,
+                            ResidueToHVU = 1,
+                            ResidueToTank = 1,
+                            ResidueTotal = 1,
+                            SRN = 1,
+                            Shift = "A",
+                            ShiftSupervisor = "Test",
+                            ShiftTime = "08.00 - 17.00",
+                            Target = 1,
+                            TempBot = 1,
+                            TempOutlet = 1,
+                            UpdatedBy = "text",
+                            Util_FlowSW = 1,
+                            Util_FlowStream = 1,
+                            Util_PressCW = 1,
+                            Util_PressInstrumenAir = 1
+                        });
+                });
+
             modelBuilder.Entity("CentumApps.Domain.Entities.Content", b =>
                 {
                     b.Property<int>("ContentId")

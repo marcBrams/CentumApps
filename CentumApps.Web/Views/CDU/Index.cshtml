@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CentumApps.Domain.Entities.CDU_100>
+
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Laporan Harian CDU</h1>
+<p class="mb-4">
+    Laporan Harian CDU - HSC Production
+</p>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        @* <i class="bi bi-info-circle text-primary h6"> 10 Laporan Terakhir</i>  *@
+        @* <a asp-controller="Content" asp-action="Create" class="btn btn-primary btn-icon-split btn-sm">
+        <span class="icon text-white-50">
+        <i class="bi bi-plus-circle"></i>
+        </span>
+        <span class="text">Buat Laporan Baru</span>
+        </a> *@
+        <a asp-controller="ShiftReport" asp-action="Create" class="btn btn-primary btn-icon-split btn-sm">
+            <span class="icon text-white-50">
+                <i class="bi bi-plus-circle"></i>
+            </span>
+            <span class="text">Buat Laporan Baru</span>
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Shift Supervisor</th>
+                        <th class="text-center">Area</th>
+                        <th class="text-center">Team</th>
+                        <th class="text-center">Shift Time</th>
+                        <th class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.CDU_100_ID</td>
+                            <td>@obj.ShiftSupervisor</td>
+                            <td>CDU</td>
+                            <td>@obj.Shift</td>
+                            <td>@obj.ShiftTime</td>
+                            <td class="text-center">
+                                <a asp-controller="Content" asp-action="Update" asp-route-CDU_100_ID="@obj.CDU_100_ID"
+                                   class="btn btn-info btn-sm">
+                                    <i class="bi bi-download"></i> Download
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
