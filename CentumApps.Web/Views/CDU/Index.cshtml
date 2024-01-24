@@ -17,7 +17,7 @@
         </span>
         <span class="text">Buat Laporan Baru</span>
         </a> *@
-        <a asp-controller="ShiftReport" asp-action="Create" class="btn btn-primary btn-icon-split btn-sm">
+        <a asp-controller="CDU" asp-action="Create" class="btn btn-primary btn-icon-split btn-sm">
             <span class="icon text-white-50">
                 <i class="bi bi-plus-circle"></i>
             </span>
@@ -44,7 +44,7 @@
                             <td>@obj.CDU_100_ID</td>
                             <td>@obj.ShiftSupervisor</td>
                             <td>CDU</td>
-                            <td>@obj.Shift</td>
+                            <td>@obj.Team</td>
                             <td>@obj.ShiftTime</td>
                             <td class="text-center">
                                 <a asp-controller="Content" asp-action="Update" asp-route-CDU_100_ID="@obj.CDU_100_ID"

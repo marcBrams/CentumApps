@@ -1,0 +1,578 @@
+﻿@model CentumApps.Domain.Entities.CDU_100
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Laporan Harian CDU</h1>
+<p class="mb-4">
+    Laporan harian shift supervisor CDU.
+</p>
+
+<div class="row">
+
+    <!-- Area Chart -->
+    <div class="col-xl-12 col-lg-7">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Masukkan data laporan</h6>
+
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <form method="post" class="row" enctype="multipart/form-data">
+                    @*  <div asp-validation-summary="All"></div> *@
+                    <div class="form-group py-2 col-12">
+                        <label asp-for="ShiftSupervisor" class="ms-2" style="font-size:13px;"></label>
+                        <input asp-for="ShiftSupervisor" class="form-control border" />
+                        <span asp-validation-for="ShiftSupervisor" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Team" class="ms-2" style="font-size:13px;"></label>
+                            <select asp-for="Team" class="form-select border">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select>                         
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="ShiftTime" class="ms-2" style="font-size:13px;"></label>
+                            <select asp-for="ShiftTime" class="form-select border">
+                                <option>08.00 - 16.00</option>
+                                <option>16.00 - 24.00</option>
+                                <option>00.00 - 08.00</option>
+                            </select>  
+                        </div>
+                    </div>
+
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Target" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Target" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Target" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Crude" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Crude" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Crude" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="SRN" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="SRN" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="SRN" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    @* <div class="form-row py-1 col-12">
+                        <div class="form-floating col-md-4 mb-3">
+                            <input asp-for="Target" class="form-control border" />
+                            <label asp-for="Target" class="ms-2"></label>
+                            <span asp-validation-for="Target" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating col-md-4 mb-3">
+                            <input asp-for="Crude" class="form-control border" />
+                            <label asp-for="Crude" class="ms-2"></label>
+                            <span asp-validation-for="Crude" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating col-md-4 mb-3">
+                            <input asp-for="SRN" class="form-control border" />
+                            <label asp-for="SRN" class="ms-2"></label>
+                            <span asp-validation-for="SRN" class="text-danger"></span>
+                        </div>
+                    </div> *@
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Kerosene" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Kerosene" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Kerosene" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="LGO" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="LGO" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="LGO" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="HGO" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="HGO" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="HGO" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="ResidueToTank" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="ResidueToTank" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="ResidueToTank" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="ResidueToHVU" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="ResidueToHVU" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="ResidueToHVU" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="ResidueTotal" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="ResidueTotal" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="ResidueTotal" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Cot100_H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Cot100_H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Cot100_H1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Cot100_H2" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Cot100_H2" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Cot100_H2" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="PressFZone" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="PressFZone" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="PressFZone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="PressTopT1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="PressTopT1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="PressTopT1" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Press_100D1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Press_100D1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Press_100D1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="TempBot" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="TempBot" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="TempBot" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="TempTopT1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="TempTopT1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="TempTopT1" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="FlowSteam" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="FlowSteam" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">T/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="FlowSteam" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="TempOutlet" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="TempOutlet" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="TempOutlet" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="PressPassH1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="PressPassH1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="PressPassH1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="PressPassE7" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="PressPassE7" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="PressPassE7" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <h5>Utilities</h5>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Util_PressSW" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Util_PressSW" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Util_PressSW" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Util_FlowSW" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Util_FlowSW" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Util_FlowSW" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Util_PressSteam" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Util_PressSteam" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Util_PressSteam" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Util_FlowSteam" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Util_FlowSteam" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">m³/J</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Util_FlowSteam" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Util_PressCW" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Util_PressCW" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Util_PressCW" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Util_PressInstrumenAir" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Util_PressInstrumenAir" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Kg/Cm²</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Util_PressInstrumenAir" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <h5>Konsumsi Fuel</h5>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Fuel_Gas" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Gas" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Nm³/Jam</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Gas" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Fuel_Oil" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Oil" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Nm³/Jam</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Oil" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_BFO_100H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_BFO_100H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_BFO_100H1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_BFG_100H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_BFG_100H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_BFG_100H1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_BPG_100H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_BPG_100H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_BPG_100H1" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_BFO_100H2" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_BFO_100H2" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_BFO_100H2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_BFG_100H2" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_BFG_100H2" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_BFG_100H2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_BPG_100H2" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_BPG_100H2" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_BPG_100H2" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_Clean_BFO_H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Clean_BFO_H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Clean_BFO_H1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_Clean_BFG_H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Clean_BFG_H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Clean_BFG_H1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Fuel_Clean_BPG_H1" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Clean_BPG_H1" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Sets</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Clean_BPG_H1" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Fuel_Amp_100_P6" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Amp_100_P6" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Amp</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Amp_100_P6" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Fuel_Amp_100_P9" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Fuel_Amp_100_P9" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Amp</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Fuel_Amp_100_P9" class="text-danger"></span>
+                        </div>      
+                    </div>
+
+                       
+                    <div class="row pt-2">
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-success w-100 btn-sm">
+                                <i class="bi bi-check-circle"></i> Create
+                            </button>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a asp-controller="CDU" asp-action="Index" class="btn btn-secondary w-100 btn-sm">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @*  <!-- Pie Chart -->
+    <div class="col-xl-4 col-lg-5">
+    <div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+    <div class="dropdown no-arrow">
+    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+    aria-labelledby="dropdownMenuLink">
+    <div class="dropdown-header">Dropdown Header:</div>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+    </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+    <div class="chart-pie pt-4 pb-2">
+    <canvas id="myPieChart"></canvas>
+    </div>
+    <div class="mt-4 text-center small">
+    <span class="mr-2">
+    <i class="fas fa-circle text-primary"></i> Direct
+    </span>
+    <span class="mr-2">
+    <i class="fas fa-circle text-success"></i> Social
+    </span>
+    <span class="mr-2">
+    <i class="fas fa-circle text-info"></i> Referral
+    </span>
+    </div>
+    </div>
+    </div>
+    </div> *@
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

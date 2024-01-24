@@ -45,7 +45,10 @@ namespace CentumApps.Infastructure.Migrations
                     b.Property<int>("Analisa_RecHGO")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cot100_H1H2")
+                    b.Property<int>("Cot100_H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cot100_H2")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedAt")
@@ -61,22 +64,43 @@ namespace CentumApps.Infastructure.Migrations
                     b.Property<int>("DesignKapasitas")
                         .HasColumnType("int");
 
-                    b.Property<int>("FlowStream")
+                    b.Property<int>("FlowSteam")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_100H_1")
+                    b.Property<int>("Fuel_Amp_100_P6")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_100H_2")
+                    b.Property<int>("Fuel_Amp_100_P9")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_100P6")
+                    b.Property<int>("Fuel_BFG_100H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_BFG_100H2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_BFO_100H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_BFO_100H2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_BPG_100H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_BPG_100H2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_Clean_BFG_H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_Clean_BFO_H1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fuel_Clean_BPG_H1")
                         .HasColumnType("int");
 
                     b.Property<int>("Fuel_Gas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Fuel_H1")
                         .HasColumnType("int");
 
                     b.Property<int>("Fuel_Oil")
@@ -142,7 +166,13 @@ namespace CentumApps.Infastructure.Migrations
                     b.Property<int>("PressFZone")
                         .HasColumnType("int");
 
-                    b.Property<int>("PressPass")
+                    b.Property<int>("PressPassE7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PressPassH1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PressTopT1")
                         .HasColumnType("int");
 
                     b.Property<int>("Press_100D1")
@@ -163,10 +193,6 @@ namespace CentumApps.Infastructure.Migrations
                     b.Property<int>("SRN")
                         .HasColumnType("int");
 
-                    b.Property<string>("Shift")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ShiftSupervisor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -178,10 +204,17 @@ namespace CentumApps.Infastructure.Migrations
                     b.Property<int>("Target")
                         .HasColumnType("int");
 
+                    b.Property<string>("Team")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("TempBot")
                         .HasColumnType("int");
 
                     b.Property<int>("TempOutlet")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TempTopT1")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -194,13 +227,19 @@ namespace CentumApps.Infastructure.Migrations
                     b.Property<int>("Util_FlowSW")
                         .HasColumnType("int");
 
-                    b.Property<int>("Util_FlowStream")
+                    b.Property<int>("Util_FlowSteam")
                         .HasColumnType("int");
 
                     b.Property<int>("Util_PressCW")
                         .HasColumnType("int");
 
                     b.Property<int>("Util_PressInstrumenAir")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Util_PressSW")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Util_PressSteam")
                         .HasColumnType("int");
 
                     b.HasKey("CDU_100_ID");
@@ -216,16 +255,24 @@ namespace CentumApps.Infastructure.Migrations
                             Analisa_FPKero = 1,
                             Analisa_PHWaterboot = 1,
                             Analisa_RecHGO = 1,
-                            Cot100_H1H2 = 1,
+                            Cot100_H1 = 1,
+                            Cot100_H2 = 1,
                             CreatedBy = "text",
                             Crude = 1,
                             DesignKapasitas = 1,
-                            FlowStream = 1,
-                            Fuel_100H_1 = 1,
-                            Fuel_100H_2 = 1,
-                            Fuel_100P6 = 1,
+                            FlowSteam = 1,
+                            Fuel_Amp_100_P6 = 1,
+                            Fuel_Amp_100_P9 = 1,
+                            Fuel_BFG_100H1 = 1,
+                            Fuel_BFG_100H2 = 1,
+                            Fuel_BFO_100H1 = 1,
+                            Fuel_BFO_100H2 = 1,
+                            Fuel_BPG_100H1 = 1,
+                            Fuel_BPG_100H2 = 1,
+                            Fuel_Clean_BFG_H1 = 1,
+                            Fuel_Clean_BFO_H1 = 1,
+                            Fuel_Clean_BPG_H1 = 1,
                             Fuel_Gas = 1,
-                            Fuel_H1 = 1,
                             Fuel_Oil = 1,
                             HGO = 1,
                             IsSubmitted = true,
@@ -246,23 +293,28 @@ namespace CentumApps.Infastructure.Migrations
                             Notes_Stopwatch = 1,
                             Pemeliharaan = "text",
                             PressFZone = 1,
-                            PressPass = 1,
+                            PressPassE7 = 1,
+                            PressPassH1 = 1,
+                            PressTopT1 = 1,
                             Press_100D1 = 1,
                             ResidueToHVU = 1,
                             ResidueToTank = 1,
                             ResidueTotal = 1,
                             SRN = 1,
-                            Shift = "A",
                             ShiftSupervisor = "Test",
                             ShiftTime = "08.00 - 17.00",
                             Target = 1,
+                            Team = "A",
                             TempBot = 1,
                             TempOutlet = 1,
+                            TempTopT1 = 1,
                             UpdatedBy = "text",
                             Util_FlowSW = 1,
-                            Util_FlowStream = 1,
+                            Util_FlowSteam = 1,
                             Util_PressCW = 1,
-                            Util_PressInstrumenAir = 1
+                            Util_PressInstrumenAir = 1,
+                            Util_PressSW = 1,
+                            Util_PressSteam = 1
                         });
                 });
 

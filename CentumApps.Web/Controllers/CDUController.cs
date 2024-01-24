@@ -30,7 +30,7 @@ namespace CentumApps.Web.Controllers
             {
                 _unitOfWork.CDU.Add(obj);
                 _unitOfWork.CDU.Save();
-                return RedirectToAction("Index", "ShiftReport");
+                return RedirectToAction("Index", "CDU");
             }
             return View();
         }
