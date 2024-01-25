@@ -28,6 +28,13 @@ namespace CentumApps.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                obj.ReportDate = DateTime.Today;
+                obj.IsSubmitted = true;
+                obj.CreatedAt = DateTime.Now;
+                // set default createdBy
+                obj.CreatedBy = "Admin";
+
+
                 _unitOfWork.CDU.Add(obj);
                 _unitOfWork.CDU.Save();
                 return RedirectToAction("Index", "CDU");

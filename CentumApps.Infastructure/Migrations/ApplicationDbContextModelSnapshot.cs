@@ -30,167 +30,187 @@ namespace CentumApps.Infastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CDU_100_ID"));
 
-                    b.Property<int>("Analisa_ColourHGO")
+                    b.Property<int?>("Analisa_EP_Kero")
                         .HasColumnType("int");
 
-                    b.Property<int>("Analisa_EPSRN")
+                    b.Property<int?>("Analisa_EP_SRN")
                         .HasColumnType("int");
 
-                    b.Property<int>("Analisa_FPKero")
+                    b.Property<int?>("Analisa_FP_Kero")
                         .HasColumnType("int");
 
-                    b.Property<int>("Analisa_PHWaterboot")
+                    b.Property<int?>("Analisa_HGO")
                         .HasColumnType("int");
 
-                    b.Property<int>("Analisa_RecHGO")
+                    b.Property<int?>("Analisa_LGO")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cot100_H1")
+                    b.Property<int?>("Analisa_PHWater_Boot")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cot100_H2")
+                    b.Property<int?>("Analisa_Rec_HGO")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Cot100_H1")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Cot100_H2")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Crude")
+                    b.Property<int?>("Crude")
                         .HasColumnType("int");
 
-                    b.Property<int>("DesignKapasitas")
+                    b.Property<int?>("DesignKapasitas")
                         .HasColumnType("int");
 
-                    b.Property<int>("FlowSteam")
+                    b.Property<int?>("FlowSteam")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Amp_100_P6")
+                    b.Property<int?>("Fuel_Amp_100_P6")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Amp_100_P9")
+                    b.Property<int?>("Fuel_Amp_100_P9")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_BFG_100H1")
+                    b.Property<int?>("Fuel_BFG_100H1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_BFG_100H2")
+                    b.Property<int?>("Fuel_BFG_100H2")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_BFO_100H1")
+                    b.Property<int?>("Fuel_BFO_100H1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_BFO_100H2")
+                    b.Property<int?>("Fuel_BFO_100H2")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_BPG_100H1")
+                    b.Property<int?>("Fuel_BPG_100H1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_BPG_100H2")
+                    b.Property<int?>("Fuel_BPG_100H2")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Clean_BFG_H1")
+                    b.Property<int?>("Fuel_Clean_BFG_H1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Clean_BFO_H1")
+                    b.Property<int?>("Fuel_Clean_BFO_H1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Clean_BPG_H1")
+                    b.Property<int?>("Fuel_Clean_BPG_H1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Gas")
+                    b.Property<int?>("Fuel_Gas")
                         .HasColumnType("int");
 
-                    b.Property<int>("Fuel_Oil")
+                    b.Property<int?>("Fuel_Oil")
                         .HasColumnType("int");
 
-                    b.Property<int>("HGO")
+                    b.Property<int?>("HGO")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsSubmitted")
+                    b.Property<bool?>("IsSubmitted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Kerosene")
+                    b.Property<int?>("Kerosene")
                         .HasColumnType("int");
 
                     b.Property<string>("KondisiKritis")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KondisiOperasi")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LGO")
+                    b.Property<int?>("LGO")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_AirGalon")
+                    b.Property<int?>("Notes_AirGalonKosong")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_Calculator")
+                    b.Property<int?>("Notes_AirGalonPenuh")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_GasTester")
+                    b.Property<int?>("Notes_Battery")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_HPBOC")
+                    b.Property<int?>("Notes_Calculator")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_HT_Charger")
+                    b.Property<int?>("Notes_Charger")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_Lembur")
+                    b.Property<int?>("Notes_Dymo")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_Manpower")
+                    b.Property<int?>("Notes_GasTester")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_MobilShift")
+                    b.Property<int?>("Notes_HPBOC")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_Oxymeter")
+                    b.Property<int?>("Notes_HT")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_Sepeda")
+                    b.Property<string>("Notes_Lembur")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Notes_Manpower")
                         .HasColumnType("int");
 
-                    b.Property<int>("Notes_Stopwatch")
+                    b.Property<int?>("Notes_MobilShift")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes_MobilShiftCondition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Notes_Oxymeter")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Notes_Sepeda")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Notes_Stopwatch")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Notes_Tensimeter")
                         .HasColumnType("int");
 
                     b.Property<string>("Pemeliharaan")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PressFZone")
+                    b.Property<int?>("PressFZone")
                         .HasColumnType("int");
 
-                    b.Property<int>("PressPassE7")
+                    b.Property<int?>("PressPassE7")
                         .HasColumnType("int");
 
-                    b.Property<int>("PressPassH1")
+                    b.Property<int?>("PressPassH1")
                         .HasColumnType("int");
 
-                    b.Property<int>("PressTopT1")
+                    b.Property<int?>("PressTopT1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Press_100D1")
+                    b.Property<int?>("Press_100D1")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ReportDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ResidueToHVU")
+                    b.Property<int?>("ResidueToHVU")
                         .HasColumnType("int");
 
-                    b.Property<int>("ResidueToTank")
+                    b.Property<int?>("ResidueToTank")
                         .HasColumnType("int");
 
-                    b.Property<int>("ResidueTotal")
+                    b.Property<int?>("ResidueTotal")
                         .HasColumnType("int");
 
-                    b.Property<int>("SRN")
+                    b.Property<int?>("SRN")
                         .HasColumnType("int");
 
                     b.Property<string>("ShiftSupervisor")
@@ -201,45 +221,44 @@ namespace CentumApps.Infastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Target")
+                    b.Property<int?>("Target")
                         .HasColumnType("int");
 
                     b.Property<string>("Team")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TempBot")
+                    b.Property<int?>("TempBot")
                         .HasColumnType("int");
 
-                    b.Property<int>("TempOutlet")
+                    b.Property<int?>("TempOutlet")
                         .HasColumnType("int");
 
-                    b.Property<int>("TempTopT1")
+                    b.Property<int?>("TempTopT1")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Util_FlowSW")
+                    b.Property<int?>("Util_FlowSW")
                         .HasColumnType("int");
 
-                    b.Property<int>("Util_FlowSteam")
+                    b.Property<int?>("Util_FlowSteam")
                         .HasColumnType("int");
 
-                    b.Property<int>("Util_PressCW")
+                    b.Property<int?>("Util_PressCW")
                         .HasColumnType("int");
 
-                    b.Property<int>("Util_PressInstrumenAir")
+                    b.Property<int?>("Util_PressInstrumenAir")
                         .HasColumnType("int");
 
-                    b.Property<int>("Util_PressSW")
+                    b.Property<int?>("Util_PressSW")
                         .HasColumnType("int");
 
-                    b.Property<int>("Util_PressSteam")
+                    b.Property<int?>("Util_PressSteam")
                         .HasColumnType("int");
 
                     b.HasKey("CDU_100_ID");
@@ -250,11 +269,13 @@ namespace CentumApps.Infastructure.Migrations
                         new
                         {
                             CDU_100_ID = 1,
-                            Analisa_ColourHGO = 1,
-                            Analisa_EPSRN = 1,
-                            Analisa_FPKero = 1,
-                            Analisa_PHWaterboot = 1,
-                            Analisa_RecHGO = 1,
+                            Analisa_EP_Kero = 1,
+                            Analisa_EP_SRN = 1,
+                            Analisa_FP_Kero = 1,
+                            Analisa_HGO = 1,
+                            Analisa_LGO = 1,
+                            Analisa_PHWater_Boot = 1,
+                            Analisa_Rec_HGO = 1,
                             Cot100_H1 = 1,
                             Cot100_H2 = 1,
                             CreatedBy = "text",
@@ -280,17 +301,23 @@ namespace CentumApps.Infastructure.Migrations
                             KondisiKritis = "text",
                             KondisiOperasi = "text",
                             LGO = 1,
-                            Notes_AirGalon = 1,
+                            Notes_AirGalonKosong = 1,
+                            Notes_AirGalonPenuh = 1,
+                            Notes_Battery = 1,
                             Notes_Calculator = 1,
+                            Notes_Charger = 1,
+                            Notes_Dymo = 1,
                             Notes_GasTester = 1,
                             Notes_HPBOC = 1,
-                            Notes_HT_Charger = 1,
-                            Notes_Lembur = 1,
+                            Notes_HT = 1,
+                            Notes_Lembur = "test",
                             Notes_Manpower = 1,
                             Notes_MobilShift = 1,
+                            Notes_MobilShiftCondition = "good",
                             Notes_Oxymeter = 1,
                             Notes_Sepeda = 1,
                             Notes_Stopwatch = 1,
+                            Notes_Tensimeter = 1,
                             Pemeliharaan = "text",
                             PressFZone = 1,
                             PressPassE7 = 1,

@@ -289,6 +289,7 @@
                         </div>
                     </div>
 
+                    <hr />
                     <div class="form-row py-1 col-12">
                         <h5>Utilities</h5>
                     </div>
@@ -511,6 +512,321 @@
                         </div>      
                     </div>
 
+                    <div class="form-row py-1 col-12">
+                        <h5>Analisa</h5>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form col-md-4 mb-3">
+                            <label asp-for="Analisa_LGO" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Analisa_LGO" class="form-control border" />
+                            </div>
+                            <span asp-validation-for="Analisa_LGO" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Analisa_HGO" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Analisa_HGO" class="form-control border" />  
+                            </div>
+                            <span asp-validation-for="Analisa_HGO" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Analisa_Rec_HGO" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Analisa_Rec_HGO" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">% vol</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Analisa_Rec_HGO" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Analisa_FP_Kero" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Analisa_FP_Kero" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Analisa_FP_Kero" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Analisa_EP_Kero" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Analisa_EP_Kero" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Analisa_EP_Kero" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Analisa_PHWater_Boot" class="ms-2" style="font-size:13px;"></label>
+                            <input asp-for="Analisa_PHWater_Boot" class="form-control border" />
+                            <span asp-validation-for="Analisa_PHWater_Boot" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label asp-for="Analisa_EP_SRN" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Analisa_EP_SRN" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">°C</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Analisa_EP_SRN" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-12 mb-3">
+                            <label asp-for="KondisiKritis" class="ms-2" style="font-size:13px;"></label>
+                            <textarea asp-for="KondisiKritis" class="form-control border" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-12 mb-3">
+                            <label asp-for="KondisiOperasi" class="ms-2" style="font-size:13px;"></label>
+                            <textarea asp-for="KondisiOperasi" class="form-control border" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-12 mb-3">
+                            <label asp-for="Pemeliharaan" class="ms-2" style="font-size:13px;"></label>
+                            <textarea asp-for="Pemeliharaan" class="form-control border" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Notes_Manpower" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Notes_Manpower" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">Orang</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Notes_Manpower" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Notes_HT" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Notes_HT" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">pcs</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Notes_HT" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Notes_Charger" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Notes_Charger" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">pcs</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Notes_Charger" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Notes_Battery" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Notes_Battery" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">pcs</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Notes_Battery" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Notes_GasTester" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Notes_GasTester" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">pcs</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Notes_GasTester" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4 mb-3">
+                            <label asp-for="Notes_Sepeda" class="ms-2" style="font-size:13px;"></label>
+                            <div class="input-group mb-3">
+                                <input asp-for="Notes_Sepeda" class="form-control border" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="font-size:10px;">unit</span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Notes_Sepeda" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <!-- Column 1: Notes_MobilShift and Notes_MobilShiftCondition -->
+                        <div class="col-md-4 mb-3">
+                            <!-- Notes_MobilShift and Notes_MobilShiftCondition -->
+                            <div class="form-group">
+                                <!-- Notes_MobilShift -->
+                                <label asp-for="Notes_MobilShift" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_MobilShift" class="form-control border" />
+                                </div>
+                                <span asp-validation-for="Notes_MobilShift" class="text-danger"></span>
+
+                                <!-- Notes_MobilShiftCondition -->
+                                <div class="form-check form-check-inline">
+                                    <input asp-for="Notes_MobilShiftCondition" type="radio" class="form-check-input" id="gridRadios1" value="Good" checked />
+                                    <label class="form-check-label" for="gridRadios1" style="font-size: 11px;">
+                                        Good
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input asp-for="Notes_MobilShiftCondition" type="radio" class="form-check-input" id="gridRadios2" value="Not Good" />
+                                    <label class="form-check-label" for="gridRadios2" style="font-size: 11px;">
+                                        Not Good
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Column 2: Notes_Stopwatch -->
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_Stopwatch" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_Stopwatch" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">pcs</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_Stopwatch" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_Calculator" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_Calculator" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">pcs</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_Calculator" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <!-- Column 1: Notes_MobilShift and Notes_MobilShiftCondition -->
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_AirGalonPenuh" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_AirGalonPenuh" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">Penuh</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_AirGalonPenuh" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Notes_Stopwatch -->
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_AirGalonKosong" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_AirGalonKosong" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">Kosong</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_AirGalonKosong" class="text-danger"></span>
+                            </div>
+                        </div>   
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_Lembur" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_Lembur" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">Orang</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_Lembur" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row py-1 col-12">
+                        <div class="col-md-3 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_HPBOC" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_HPBOC" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">pcs</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_HPBOC" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_Tensimeter" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_Tensimeter" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">pcs</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_Tensimeter" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_Oxymeter" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_Oxymeter" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">pcs</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_Oxymeter" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Notes_Dymo" class="ms-2" style="font-size: 13px;"></label>
+                                <div class="input-group mb-3">
+                                    <input asp-for="Notes_Dymo" class="form-control border" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="font-size: 10px;">pcs</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Notes_Dymo" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
                        
                     <div class="row pt-2">
                         <div class="col-6 col-md-3">

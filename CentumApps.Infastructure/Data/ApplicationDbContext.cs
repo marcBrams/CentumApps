@@ -91,31 +91,39 @@ namespace CentumApps.Infastructure.Data
                 Fuel_Clean_BPG_H1 = 1,
                 Fuel_Amp_100_P6 = 1,
                 Fuel_Amp_100_P9 = 1,
-                Analisa_ColourHGO = 1,
-                Analisa_RecHGO = 1,
-                Analisa_FPKero = 1,
-                Analisa_PHWaterboot = 1,
-                Analisa_EPSRN = 1,
+                Analisa_LGO = 1,
+                Analisa_HGO = 1,
+                Analisa_Rec_HGO = 1,
+                Analisa_FP_Kero = 1,
+                Analisa_EP_Kero = 1,
+                Analisa_PHWater_Boot = 1,
+                Analisa_EP_SRN = 1,
                 KondisiKritis = "text",
                 KondisiOperasi = "text",
                 Pemeliharaan = "text",
                 Notes_Manpower = 1,
-                Notes_HT_Charger = 1,
+                Notes_HT = 1,
+                Notes_Charger = 1,
+                Notes_Battery = 1,
                 Notes_GasTester = 1,
                 Notes_Sepeda = 1,
                 Notes_MobilShift = 1,
+                Notes_MobilShiftCondition = "good",
                 Notes_Stopwatch = 1,
                 Notes_Calculator = 1,
-                Notes_AirGalon = 1,
-                Notes_Lembur = 1,
+                Notes_AirGalonPenuh = 1,
+                Notes_AirGalonKosong = 1,
+                Notes_Lembur = "test",
                 Notes_HPBOC = 1,
+                Notes_Tensimeter = 1,
                 Notes_Oxymeter = 1,
+                Notes_Dymo = 1,
                 //CreatedAt =
                 CreatedBy = "text",
                 //UpdatedAt =
                 UpdatedBy = "text",
                 IsSubmitted = true
-            });
+            }); ;
         }
     }
 }
